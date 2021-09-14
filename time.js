@@ -25,7 +25,10 @@ setInterval(() => {
 // strong = document.getElementById('TimeZ')
 // console.log(strong.innerHTML)
 hii = () =>{
-  document.querySelector('#TimeZ').innerHTML = "The following Time is of <strong>" + localStorage.getItem('tZone') + "</strong>"
+  if (localStorage.getItem('tZone') == null) {
+    document.querySelector('#TimeZ').innerHTML = "Select Any TimeZone to View Time"    
+  } else {
+    document.querySelector('#TimeZ').innerHTML = "The following Time is of <strong>" + localStorage.getItem('tZone') + "</strong>"
+  }
 }
-
 setTimeout(hii, 2000)
